@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: useless-api
+  labels:
+    app: useless-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: useless-api
+  template:
+    metadata:
+      labels:
+        app: useless-api
+    spec:
+      containers:
+      - name: useless-api
+        image: dfmarin/useless-api:v1
+        ports:
+        - containerPort: 5000

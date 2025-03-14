@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: useless-api
+spec:
+  rules:
+  - host: "useless-api.test.com"
+    http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: useless-api
+              port:
+                number: 8080
